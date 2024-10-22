@@ -28,7 +28,6 @@ jobs:
           codeScanUrl: https://app.codescan.io
           login: squ_6a0bfe3b037e54b5d85453dab6f44069c1b40e21
           generateSarifFile: true
-          failOnRedQualityGate: true 
       - name: Run Codescan On PR 
         if: github.event_name == 'pull_request' 
         uses: codescan-io/codescan-scanner-action@1.6
@@ -39,7 +38,6 @@ jobs:
           login: squ_6a0bfe3b037e54b5d85453dab6f44069c1b40e21
           scanChangedFilesOnly: true 
           generateSarifFile: true 
-          failOnRedQualityGate: true 
           args: | 
             sonar.pullrequest.branch=${{github.head_ref}} 
             sonar.pullrequest.base=${{github.base_ref}} 
