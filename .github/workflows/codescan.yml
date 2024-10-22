@@ -23,20 +23,19 @@ jobs:
         if: github.event_name == 'push' 
         uses: codescan-io/codescan-scanner-action@1.6
         with: 
-          organization: teer
-          projectKey: lokeex-examples
-          codeScanUrl: https://vadev.codescan.io
-          login: squ_9dcccdd50b65f767f6818a2b296bf10db9d77a3f
+          organization: test
+          projectKey: testing
+          codeScanUrl: https://cf1f-182-156-24-2.ngrok-free.app
+          login: squ_1fef2c1d1546769f149dcdf0d75b0f930aeba965
           generateSarifFile: true
       - name: Run Codescan On PR 
         if: github.event_name == 'pull_request' 
         uses: codescan-io/codescan-scanner-action@1.6
         with: 
-          organization: teer
-          projectKey: lokeex-examples
-          codeScanUrl: https://vadev.codescan.io
-          login: squ_9dcccdd50b65f767f6818a2b296bf10db9d77a3f
-          scanChangedFilesOnly: true 
+          organization: test
+          projectKey: testing
+          codeScanUrl: https://cf1f-182-156-24-2.ngrok-free.app
+          login: squ_1fef2c1d1546769f149dcdf0d75b0f930aeba965 
           generateSarifFile: true 
           args: | 
             sonar.pullrequest.branch=${{github.head_ref}} 
